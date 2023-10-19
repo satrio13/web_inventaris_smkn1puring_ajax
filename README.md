@@ -1,1 +1,3 @@
-# web_inventaris_smkn1puring_ajax
+# Akun Login #
+username: admin
+password: 123456
