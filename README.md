@@ -1,4 +1,2 @@
 # Akun Login #
-username: admin
-
-password: 123456
+username: admin <br> password: 123456
