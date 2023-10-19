@@ -1,0 +1,1 @@
+# web_inventaris_smkn1puring_ajax
