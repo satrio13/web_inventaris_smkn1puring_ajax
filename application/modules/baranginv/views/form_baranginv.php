@@ -105,7 +105,24 @@
                 $kosong = 0;
                 $no = 1;
                 $cek_id = 0;
-                foreach($sheet as $row)
+
+                // Array baru untuk menyimpan data unik berdasarkan 'kode_inv'
+                $uniqueData = [];
+                // Loop melalui data yang diberikan
+                foreach($sheet as $item)
+                {
+                  // Gunakan 'kode_inv' sebagai kunci array
+                  $kode_inv = $item['A'];
+                  // Jika 'kode_inv' belum ada dalam array $uniqueData, tambahkan data tersebut
+                  if(!isset($uniqueData[$kode_inv]))
+                  {
+                    $uniqueData[$kode_inv] = $item;
+                  }
+                }
+
+                // Ubah kembali array asosiatif menjadi indeks numerik
+                $uniqueData = array_values($uniqueData);
+                foreach($uniqueData as $row)
                 {
                   $kode_inv = $row['A'];
                   $barang = $row['B'];
