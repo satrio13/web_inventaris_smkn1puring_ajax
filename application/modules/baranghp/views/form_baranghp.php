@@ -97,7 +97,24 @@
                   $kosong = 0;
                   $no = 1;
                   $cek_id = 0;
-                  foreach($sheet as $row)
+
+                  // Array baru untuk menyimpan data unik berdasarkan 'kode_hp'
+                  $uniqueData = [];
+                  // Loop melalui data yang diberikan
+                  foreach($sheet as $item)
+                  {
+                    // Gunakan 'kode_hp' sebagai kunci array
+                    $kode_hp = $item['A'];
+                    // Jika 'kode_hp' belum ada dalam array $uniqueData, tambahkan data tersebut
+                    if(!isset($uniqueData[$kode_hp]))
+                    {
+                      $uniqueData[$kode_hp] = $item;
+                    }
+                  }
+
+                  // Ubah kembali array asosiatif menjadi indeks numerik
+                  $uniqueData = array_values($uniqueData);
+                  foreach($uniqueData as $row)
                   {
                     $kode_hp = $row['A'];
                     $barang = $row['B'];
