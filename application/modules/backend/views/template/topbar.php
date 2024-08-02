@@ -356,7 +356,7 @@
                   $('#modal_form_password').modal('hide');
                   swal("Password berhasil dirubah, silahkan login kembali")
                   .then((value) => {
-                    window.location.replace("<?= base_url('auth/logout'); ?>");
+                    window.location.replace(base_url+'auth/logout');
                   });                 
               }else
               {
